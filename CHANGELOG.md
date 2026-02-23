@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.14.0](https://github.com/grafana/alloy/compare/v1.13.1...v1.14.0) (2026-02-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **loki.secretfilter:** Some config options are removed entirely:
+    - `partial_mask` (replaced with `redact_percent`)
+    - `allowlist` (now controlled with custom gitleaks config)
+    - `enable_entropy` 
+    - `include_generic` (now controlled with custom gitleaks config)
+    - `types` (now controlled with custom gitleaks config)
+
+### Features 🌟
+
+* Add limited type checking for validate command ([#5076](https://github.com/grafana/alloy/issues/5076)) ([21702d6](https://github.com/grafana/alloy/commit/21702d679dfa256fe032183a126fee6bf2e58083))
+* **database_observability.mysql:** Collect client info for query samples ([#5552](https://github.com/grafana/alloy/issues/5552)) ([0bc1f32](https://github.com/grafana/alloy/commit/0bc1f323767a49624ea4bdae5cfd3c958337d681))
+* **database_observability.postgres:** Add exclude databases/users for `logs` collector ([#5569](https://github.com/grafana/alloy/issues/5569)) ([bff5060](https://github.com/grafana/alloy/commit/bff50601238c15698a7e31aa64985e9081ff3914))
+* **database_observability.postgres:** Add logs collector ([#5445](https://github.com/grafana/alloy/issues/5445)) ([1392953](https://github.com/grafana/alloy/commit/1392953dc6ac9f34422d50a11270cc8e42219540))
+* **database_observability.postgres:** Allow excluding queries ran by specific users ([#5544](https://github.com/grafana/alloy/issues/5544)) ([18737d8](https://github.com/grafana/alloy/commit/18737d8396160aea7a4db0f2f69bf0e14c9172b6))
+* Deprecate prometheus.write.queue ([#5509](https://github.com/grafana/alloy/issues/5509)) ([ee0f227](https://github.com/grafana/alloy/commit/ee0f227bc5b1363de9699e65de7d6ae3fe8e33a9))
+* Introduce SeriesRefMappingStore ([#5522](https://github.com/grafana/alloy/issues/5522)) ([6c4cc6a](https://github.com/grafana/alloy/commit/6c4cc6a32babe66e05db6b0004e31d6592ea6b60))
+* **loki.secretfilter:** Change secretfilter implementation to use Gitleaks ([#5503](https://github.com/grafana/alloy/issues/5503)) ([e4907ab](https://github.com/grafana/alloy/commit/e4907abe4de9bafdd4d15f1558e49aa8ccf41c2f))
+* **mixin:** Add OTel Engine Overview dashboard ([#5573](https://github.com/grafana/alloy/issues/5573)) ([ca77d37](https://github.com/grafana/alloy/commit/ca77d37892ac2eab89aac11c38558d1694ad344c))
+* **mixin:** Add zipped dashboards as a release artifact ([#5603](https://github.com/grafana/alloy/issues/5603)) ([34f79f6](https://github.com/grafana/alloy/commit/34f79f66c59e2da9acfb48037f13e5965156081d))
+* **otelcol:** Expose missing tail_sampling drop and bytes_limiting ([b31ba8f](https://github.com/grafana/alloy/commit/b31ba8f81c56c278c667c6bfa04f8f64b45f9dbf))
+* Upgrade prometheus to version 0.309.1 ([#5479](https://github.com/grafana/alloy/issues/5479)) ([e412321](https://github.com/grafana/alloy/commit/e4123217a7caa879f7910a61c3ec1f0188d75b0e))
+
+
+### Bug Fixes 🐛
+
+* Add /FORCEREGISTRY flag to windows installer ([#5517](https://github.com/grafana/alloy/issues/5517)) ([f081e28](https://github.com/grafana/alloy/commit/f081e2895db5fe0c2318e859c8eee13b92967044))
+* **controller:** Prevent duplicate loaders from being created ([#5446](https://github.com/grafana/alloy/issues/5446)) ([a6ab764](https://github.com/grafana/alloy/commit/a6ab7649788fb43d6b3c3cf241fda5fcf5ee9652))
+* Ensure Valid/Clear States in Alloy Engine Extension ([#5551](https://github.com/grafana/alloy/issues/5551)) ([70706da](https://github.com/grafana/alloy/commit/70706da5220fd3abb33fee561b195b8eea2f2850))
+* Expose missing `otelcol.processor.tail_sampling` options ([#5606](https://github.com/grafana/alloy/issues/5606)) ([b31ba8f](https://github.com/grafana/alloy/commit/b31ba8f81c56c278c667c6bfa04f8f64b45f9dbf))
+* **mixin:** Support OTel exporter batching ([#5618](https://github.com/grafana/alloy/issues/5618)) ([234d419](https://github.com/grafana/alloy/commit/234d419f0c1e7eb0bb1ee23d531bc23f6d8772a9))
+* **prometheus.echo:** Return zero for SeriesRef ([#5622](https://github.com/grafana/alloy/issues/5622)) ([96e2c84](https://github.com/grafana/alloy/commit/96e2c84d346c8e1b5eb4327dfa865e04b4e0168e))
+* Use read-write mutex locks to prevent concurrent tagsCache map reads and writes ([#5534](https://github.com/grafana/alloy/issues/5534)) ([54a059b](https://github.com/grafana/alloy/commit/54a059be051c826949249a76944db1f677b22d76))
+
 ## [1.13.1](https://github.com/grafana/alloy/compare/v1.13.0...v1.13.1) (2026-02-13)
 
 
